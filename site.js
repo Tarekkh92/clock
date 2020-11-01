@@ -15,7 +15,7 @@
 
             (function () {
                 $.ajax({
-                url:"http://worldtimeapi.org/api/ip"+x,
+                url:"https://worldtimeapi.org/api/ip"+x,
                 success:function name(res) {
                         //console.log(x);
                    
