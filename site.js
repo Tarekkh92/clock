@@ -31,7 +31,7 @@
                     //console.log("Date :"+d);
                     //console.log("Time: "+ time);
                     
-                     document.getElementById("time").innerHTML+="Date: "+d + " Time: "+time;
+                     document.getElementById("time").innerHTML+=" Date: "+d + " Time: "+time;
                     
                 }
 
