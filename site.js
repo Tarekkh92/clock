@@ -19,7 +19,11 @@
                 success:function name(res) {
                         //console.log(x);
                    
-                    //console.log(res);
+                   var u=res.timezone;
+                    var e = u.split('/');
+                    console.log(e[1]);
+                    
+                    
                     var str =String(res.datetime);
                     var spl=str.split('T');
                     var d=spl[0];
@@ -64,11 +68,12 @@ $.ajax({
 )
 }
  
-
+var test=0;
 function getCapital(q){
 $.ajax({
     url:"https://restcountries.eu/rest/v2/capital/"+q,
     success:function name(res) {
+       console.log(res[0].callingCodes);
         document.getElementById("output").innerHTML="<h1>"+res[0].name+
         "</h1><br><img src="+res[0].flag+"  class='responsive' width='500'/><br><p>Region:"+res[0].region+"<br/>Population: "+res[0].population+
         "<br><Currency : "+res[0].currencies[0].name+"<br> Currency code :"+res[0].currencies[0].code +
@@ -83,6 +88,18 @@ $.ajax({
     }
 
 })
+}
+function getCallingCode(q){
+    $.ajax({
+        url:"https://restcountries.eu/rest/v2/capital/"+q,
+        success:function name(res) {
+            document.getElementById("num").innerHTML="<p>"+res[0].callingCodes+"</p>"
+        }
+    
+    })
+   
+
+
 }
 function getTime(offset){
     var arr=[];
